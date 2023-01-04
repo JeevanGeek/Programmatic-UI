@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NextViewController.swift
 //  Programmatic UI
 //
 //  Created by Jeevan Chandra Joshi on 04/01/23.
@@ -7,19 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NextViewController: UIViewController {
     let button = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "First Screen"
+        title = "Second Screen"
         setupButton()
     }
 
     func setupButton() {
         view.addSubview(button)
         button.configuration = .filled()
-        button.configuration?.title = "Next"
+        button.configuration?.title = "Back"
         button.configuration?.baseBackgroundColor = .systemPink
         button.addTarget(self, action: #selector(goto), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +32,6 @@ class ViewController: UIViewController {
     }
 
     @objc func goto() {
-        navigationController?.pushViewController(NextViewController(), animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
